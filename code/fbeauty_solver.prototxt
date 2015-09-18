@@ -1,0 +1,15 @@
+train_net: "fbeauty_train.prototxt"
+test_net: "fbeauty_val.prototxt"
+test_iter: 100
+test_interval: 100
+base_lr: 0.001
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "inv"
+gamma: 0.0001
+power: 0.75
+display: 100
+max_iter: 1400
+snapshot: 100
+snapshot_prefix: "fbeauty"
+solver_mode: CPU

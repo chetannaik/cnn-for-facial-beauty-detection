@@ -1,0 +1,222 @@
+libdc1394 error: Failed to initialize libdc1394
+I1217 08:45:54.310184 20946 train_net.cpp:26] Starting Optimization
+I1217 08:45:54.310783 20946 solver.cpp:41] Creating training net.
+I1217 08:45:54.311316 20946 net.cpp:75] Creating Layer data
+I1217 08:45:54.311765 20946 net.cpp:111] data -> data
+I1217 08:45:54.312175 20946 net.cpp:111] data -> label
+I1217 08:45:54.312544 20946 data_layer.cpp:145] Opening leveldb fbeauty_train_leveldb
+I1217 08:45:54.314996 20946 data_layer.cpp:185] output data size: 50,3,120,90
+E1217 08:45:54.317229 20946 common.cpp:31] Cannot create Cublas handle. Cublas won't be available.
+E1217 08:45:54.318032 20946 common.cpp:38] Cannot create Curand generator. Curand won't be available.
+I1217 08:45:54.318464 20946 net.cpp:126] Top shape: 50 3 120 90 (1620000)
+I1217 08:45:54.318960 20946 net.cpp:126] Top shape: 50 1 1 1 (50)
+I1217 08:45:54.319353 20946 net.cpp:157] data does not need backward computation.
+I1217 08:45:54.319705 20946 net.cpp:75] Creating Layer conv1
+I1217 08:45:54.320050 20946 net.cpp:85] conv1 <- data
+I1217 08:45:54.320415 20946 net.cpp:111] conv1 -> conv1
+I1217 08:45:54.321015 20946 net.cpp:126] Top shape: 50 50 28 20 (1400000)
+I1217 08:45:54.321466 20946 net.cpp:152] conv1 needs backward computation.
+I1217 08:45:54.321715 20946 net.cpp:75] Creating Layer pool1
+I1217 08:45:54.321732 20946 net.cpp:85] pool1 <- conv1
+I1217 08:45:54.321745 20946 net.cpp:111] pool1 -> pool1
+I1217 08:45:54.321765 20946 net.cpp:126] Top shape: 50 50 14 10 (350000)
+I1217 08:45:54.321779 20946 net.cpp:152] pool1 needs backward computation.
+I1217 08:45:54.321794 20946 net.cpp:75] Creating Layer conv2
+I1217 08:45:54.321805 20946 net.cpp:85] conv2 <- pool1
+I1217 08:45:54.321818 20946 net.cpp:111] conv2 -> conv2
+I1217 08:45:54.322427 20946 net.cpp:126] Top shape: 50 100 10 6 (300000)
+I1217 08:45:54.323186 20946 net.cpp:152] conv2 needs backward computation.
+I1217 08:45:54.323338 20946 net.cpp:75] Creating Layer pool2
+I1217 08:45:54.323353 20946 net.cpp:85] pool2 <- conv2
+I1217 08:45:54.323577 20946 net.cpp:111] pool2 -> pool2
+I1217 08:45:54.323611 20946 net.cpp:126] Top shape: 50 100 5 3 (75000)
+I1217 08:45:54.323634 20946 net.cpp:152] pool2 needs backward computation.
+I1217 08:45:54.323652 20946 net.cpp:75] Creating Layer ip1
+I1217 08:45:54.323664 20946 net.cpp:85] ip1 <- pool2
+I1217 08:45:54.323678 20946 net.cpp:111] ip1 -> ip1
+I1217 08:45:54.337997 20946 net.cpp:126] Top shape: 50 500 1 1 (25000)
+I1217 08:45:54.338827 20946 net.cpp:152] ip1 needs backward computation.
+I1217 08:45:54.339254 20946 net.cpp:75] Creating Layer relu1
+I1217 08:45:54.339596 20946 net.cpp:85] relu1 <- ip1
+I1217 08:45:54.339921 20946 net.cpp:99] relu1 -> ip1 (in-place)
+I1217 08:45:54.340251 20946 net.cpp:126] Top shape: 50 500 1 1 (25000)
+I1217 08:45:54.340592 20946 net.cpp:152] relu1 needs backward computation.
+I1217 08:45:54.340965 20946 net.cpp:75] Creating Layer ip2
+I1217 08:45:54.341306 20946 net.cpp:85] ip2 <- ip1
+I1217 08:45:54.341486 20946 net.cpp:111] ip2 -> ip2
+I1217 08:45:54.341682 20946 net.cpp:126] Top shape: 50 5 1 1 (250)
+I1217 08:45:54.341699 20946 net.cpp:152] ip2 needs backward computation.
+I1217 08:45:54.341716 20946 net.cpp:75] Creating Layer loss
+I1217 08:45:54.341729 20946 net.cpp:85] loss <- ip2
+I1217 08:45:54.341742 20946 net.cpp:85] loss <- label
+I1217 08:45:54.341761 20946 net.cpp:152] loss needs backward computation.
+I1217 08:45:54.341779 20946 net.cpp:181] Collecting Learning Rate and Weight Decay.
+I1217 08:45:54.341796 20946 net.cpp:174] Network initialization done.
+I1217 08:45:54.341810 20946 net.cpp:175] Memory required for Data 15081200
+I1217 08:45:54.342114 20946 solver.cpp:44] Creating testing net.
+I1217 08:45:54.342442 20946 net.cpp:75] Creating Layer data
+I1217 08:45:54.342461 20946 net.cpp:111] data -> data
+I1217 08:45:54.342475 20946 net.cpp:111] data -> label
+I1217 08:45:54.342491 20946 data_layer.cpp:145] Opening leveldb fbeauty_val_leveldb
+I1217 08:45:54.344913 20946 data_layer.cpp:185] output data size: 50,3,120,90
+I1217 08:45:54.346685 20946 net.cpp:126] Top shape: 50 3 120 90 (1620000)
+I1217 08:45:54.347635 20946 net.cpp:126] Top shape: 50 1 1 1 (50)
+I1217 08:45:54.348080 20946 net.cpp:157] data does not need backward computation.
+I1217 08:45:54.348528 20946 net.cpp:75] Creating Layer conv1
+I1217 08:45:54.348554 20946 net.cpp:85] conv1 <- data
+I1217 08:45:54.348577 20946 net.cpp:111] conv1 -> conv1
+I1217 08:45:54.348726 20946 net.cpp:126] Top shape: 50 50 28 20 (1400000)
+I1217 08:45:54.349138 20946 net.cpp:152] conv1 needs backward computation.
+I1217 08:45:54.349300 20946 net.cpp:75] Creating Layer pool1
+I1217 08:45:54.349546 20946 net.cpp:85] pool1 <- conv1
+I1217 08:45:54.349652 20946 net.cpp:111] pool1 -> pool1
+I1217 08:45:54.349671 20946 net.cpp:126] Top shape: 50 50 14 10 (350000)
+I1217 08:45:54.349946 20946 net.cpp:152] pool1 needs backward computation.
+I1217 08:45:54.349967 20946 net.cpp:75] Creating Layer conv2
+I1217 08:45:54.349979 20946 net.cpp:85] conv2 <- pool1
+I1217 08:45:54.349992 20946 net.cpp:111] conv2 -> conv2
+I1217 08:45:54.350806 20946 net.cpp:126] Top shape: 50 100 10 6 (300000)
+I1217 08:45:54.351490 20946 net.cpp:152] conv2 needs backward computation.
+I1217 08:45:54.351675 20946 net.cpp:75] Creating Layer pool2
+I1217 08:45:54.351691 20946 net.cpp:85] pool2 <- conv2
+I1217 08:45:54.351706 20946 net.cpp:111] pool2 -> pool2
+I1217 08:45:54.351722 20946 net.cpp:126] Top shape: 50 100 5 3 (75000)
+I1217 08:45:54.351734 20946 net.cpp:152] pool2 needs backward computation.
+I1217 08:45:54.351950 20946 net.cpp:75] Creating Layer ip1
+I1217 08:45:54.351965 20946 net.cpp:85] ip1 <- pool2
+I1217 08:45:54.351979 20946 net.cpp:111] ip1 -> ip1
+I1217 08:45:54.365109 20946 net.cpp:126] Top shape: 50 500 1 1 (25000)
+I1217 08:45:54.365586 20946 net.cpp:152] ip1 needs backward computation.
+I1217 08:45:54.369352 20946 net.cpp:75] Creating Layer relu1
+I1217 08:45:54.369817 20946 net.cpp:85] relu1 <- ip1
+I1217 08:45:54.370394 20946 net.cpp:99] relu1 -> ip1 (in-place)
+I1217 08:45:54.370759 20946 net.cpp:126] Top shape: 50 500 1 1 (25000)
+I1217 08:45:54.371140 20946 net.cpp:152] relu1 needs backward computation.
+I1217 08:45:54.371526 20946 net.cpp:75] Creating Layer ip2
+I1217 08:45:54.371948 20946 net.cpp:85] ip2 <- ip1
+I1217 08:45:54.372323 20946 net.cpp:111] ip2 -> ip2
+I1217 08:45:54.372725 20946 net.cpp:126] Top shape: 50 5 1 1 (250)
+I1217 08:45:54.373077 20946 net.cpp:152] ip2 needs backward computation.
+I1217 08:45:54.373097 20946 net.cpp:75] Creating Layer prob
+I1217 08:45:54.373345 20946 net.cpp:85] prob <- ip2
+I1217 08:45:54.373360 20946 net.cpp:111] prob -> prob
+I1217 08:45:54.373376 20946 net.cpp:126] Top shape: 50 5 1 1 (250)
+I1217 08:45:54.373389 20946 net.cpp:152] prob needs backward computation.
+I1217 08:45:54.373402 20946 net.cpp:75] Creating Layer accuracy
+I1217 08:45:54.373415 20946 net.cpp:85] accuracy <- prob
+I1217 08:45:54.373428 20946 net.cpp:85] accuracy <- label
+I1217 08:45:54.373441 20946 net.cpp:111] accuracy -> accuracy
+I1217 08:45:54.373458 20946 net.cpp:126] Top shape: 1 2 1 1 (2)
+I1217 08:45:54.373471 20946 net.cpp:152] accuracy needs backward computation.
+I1217 08:45:54.373482 20946 net.cpp:163] This network produces output accuracy
+I1217 08:45:54.373498 20946 net.cpp:181] Collecting Learning Rate and Weight Decay.
+I1217 08:45:54.373512 20946 net.cpp:174] Network initialization done.
+I1217 08:45:54.373524 20946 net.cpp:175] Memory required for Data 15082208
+I1217 08:45:54.373549 20946 solver.cpp:49] Solver scaffolding done.
+I1217 08:45:54.373564 20946 solver.cpp:61] Solving fbeauty
+I1217 08:45:54.373579 20946 solver.cpp:106] Iteration 0, Testing net
+I1217 08:46:09.172651 20946 solver.cpp:142] Test score #0: 0.365
+I1217 08:46:09.173261 20946 solver.cpp:142] Test score #1: 1.82281
+I1217 08:46:53.403725 20946 solver.cpp:237] Iteration 100, lr = 0.000992565
+I1217 08:46:53.409137 20946 solver.cpp:87] Iteration 100, loss = 1.1931
+I1217 08:46:53.410212 20946 solver.cpp:106] Iteration 100, Testing net
+I1217 08:47:09.195102 20946 solver.cpp:142] Test score #0: 0.4432
+I1217 08:47:09.195902 20946 solver.cpp:142] Test score #1: 1.54388
+I1217 08:47:09.200937 20946 solver.cpp:159] Snapshotting to fbeauty_iter_100
+I1217 08:47:09.211360 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_100.solverstate
+I1217 08:47:51.915344 20946 solver.cpp:237] Iteration 200, lr = 0.000985258
+I1217 08:47:51.919858 20946 solver.cpp:87] Iteration 200, loss = 1.31764
+I1217 08:47:51.920907 20946 solver.cpp:106] Iteration 200, Testing net
+I1217 08:48:06.725400 20946 solver.cpp:142] Test score #0: 0.3928
+I1217 08:48:06.726454 20946 solver.cpp:142] Test score #1: 1.5468
+I1217 08:48:06.729892 20946 solver.cpp:159] Snapshotting to fbeauty_iter_200
+I1217 08:48:06.743216 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_200.solverstate
+I1217 08:48:51.133980 20946 solver.cpp:237] Iteration 300, lr = 0.000978075
+I1217 08:48:51.140488 20946 solver.cpp:87] Iteration 300, loss = 1.20648
+I1217 08:48:51.141301 20946 solver.cpp:106] Iteration 300, Testing net
+I1217 08:49:05.830991 20946 solver.cpp:142] Test score #0: 0.3464
+I1217 08:49:05.831818 20946 solver.cpp:142] Test score #1: 1.52736
+I1217 08:49:05.835132 20946 solver.cpp:159] Snapshotting to fbeauty_iter_300
+I1217 08:49:05.846426 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_300.solverstate
+I1217 08:49:48.661664 20946 solver.cpp:237] Iteration 400, lr = 0.000971013
+I1217 08:49:48.666596 20946 solver.cpp:87] Iteration 400, loss = 1.35352
+I1217 08:49:48.667482 20946 solver.cpp:106] Iteration 400, Testing net
+I1217 08:50:03.246722 20946 solver.cpp:142] Test score #0: 0.4386
+I1217 08:50:03.247669 20946 solver.cpp:142] Test score #1: 1.51853
+I1217 08:50:03.250851 20946 solver.cpp:159] Snapshotting to fbeauty_iter_400
+I1217 08:50:03.262692 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_400.solverstate
+I1217 08:50:45.569739 20946 solver.cpp:237] Iteration 500, lr = 0.000964069
+I1217 08:50:45.575623 20946 solver.cpp:87] Iteration 500, loss = 1.3694
+I1217 08:50:45.576472 20946 solver.cpp:106] Iteration 500, Testing net
+I1217 08:51:00.112241 20946 solver.cpp:142] Test score #0: 0.4266
+I1217 08:51:00.113055 20946 solver.cpp:142] Test score #1: 1.52857
+I1217 08:51:00.117574 20946 solver.cpp:159] Snapshotting to fbeauty_iter_500
+I1217 08:51:00.151538 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_500.solverstate
+I1217 08:51:43.626101 20946 solver.cpp:237] Iteration 600, lr = 0.00095724
+I1217 08:51:43.631587 20946 solver.cpp:87] Iteration 600, loss = 1.30953
+I1217 08:51:43.632254 20946 solver.cpp:106] Iteration 600, Testing net
+I1217 08:51:59.495398 20946 solver.cpp:142] Test score #0: 0.4408
+I1217 08:51:59.496688 20946 solver.cpp:142] Test score #1: 1.50064
+I1217 08:51:59.500267 20946 solver.cpp:159] Snapshotting to fbeauty_iter_600
+I1217 08:51:59.513025 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_600.solverstate
+I1217 08:52:45.010840 20946 solver.cpp:237] Iteration 700, lr = 0.000950522
+I1217 08:52:45.016093 20946 solver.cpp:87] Iteration 700, loss = 1.2728
+I1217 08:52:45.017720 20946 solver.cpp:106] Iteration 700, Testing net
+I1217 08:53:00.944733 20946 solver.cpp:142] Test score #0: 0.4324
+I1217 08:53:00.945006 20946 solver.cpp:142] Test score #1: 1.51326
+I1217 08:53:00.949426 20946 solver.cpp:159] Snapshotting to fbeauty_iter_700
+I1217 08:53:00.960860 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_700.solverstate
+I1217 08:53:44.755072 20946 solver.cpp:237] Iteration 800, lr = 0.000943913
+I1217 08:53:44.760460 20946 solver.cpp:87] Iteration 800, loss = 1.16026
+I1217 08:53:44.762650 20946 solver.cpp:106] Iteration 800, Testing net
+I1217 08:53:59.396534 20946 solver.cpp:142] Test score #0: 0.4416
+I1217 08:53:59.397966 20946 solver.cpp:142] Test score #1: 1.50782
+I1217 08:53:59.401146 20946 solver.cpp:159] Snapshotting to fbeauty_iter_800
+I1217 08:53:59.414772 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_800.solverstate
+I1217 08:54:43.473392 20946 solver.cpp:237] Iteration 900, lr = 0.000937411
+I1217 08:54:43.478479 20946 solver.cpp:87] Iteration 900, loss = 1.2486
+I1217 08:54:43.479739 20946 solver.cpp:106] Iteration 900, Testing net
+I1217 08:54:58.714500 20946 solver.cpp:142] Test score #0: 0.463
+I1217 08:54:58.715227 20946 solver.cpp:142] Test score #1: 1.47942
+I1217 08:54:58.718852 20946 solver.cpp:159] Snapshotting to fbeauty_iter_900
+I1217 08:54:58.733523 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_900.solverstate
+I1217 08:55:43.221684 20946 solver.cpp:237] Iteration 1000, lr = 0.000931013
+I1217 08:55:43.226861 20946 solver.cpp:87] Iteration 1000, loss = 1.1359
+I1217 08:55:43.228106 20946 solver.cpp:106] Iteration 1000, Testing net
+I1217 08:55:59.887131 20946 solver.cpp:142] Test score #0: 0.4504
+I1217 08:55:59.887998 20946 solver.cpp:142] Test score #1: 1.48583
+I1217 08:55:59.892730 20946 solver.cpp:159] Snapshotting to fbeauty_iter_1000
+I1217 08:55:59.906237 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_1000.solverstate
+I1217 08:56:43.570854 20946 solver.cpp:237] Iteration 1100, lr = 0.000924715
+I1217 08:56:43.575734 20946 solver.cpp:87] Iteration 1100, loss = 1.29944
+I1217 08:56:43.576711 20946 solver.cpp:106] Iteration 1100, Testing net
+I1217 08:56:59.369261 20946 solver.cpp:142] Test score #0: 0.473
+I1217 08:56:59.370169 20946 solver.cpp:142] Test score #1: 1.48315
+I1217 08:56:59.373347 20946 solver.cpp:159] Snapshotting to fbeauty_iter_1100
+I1217 08:56:59.391382 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_1100.solverstate
+I1217 08:57:42.972723 20946 solver.cpp:237] Iteration 1200, lr = 0.000918516
+I1217 08:57:42.978724 20946 solver.cpp:87] Iteration 1200, loss = 1.33184
+I1217 08:57:42.979601 20946 solver.cpp:106] Iteration 1200, Testing net
+I1217 08:57:58.051594 20946 solver.cpp:142] Test score #0: 0.4622
+I1217 08:57:58.052829 20946 solver.cpp:142] Test score #1: 1.45924
+I1217 08:57:58.056110 20946 solver.cpp:159] Snapshotting to fbeauty_iter_1200
+I1217 08:57:58.071054 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_1200.solverstate
+I1217 08:58:43.705700 20946 solver.cpp:237] Iteration 1300, lr = 0.000912412
+I1217 08:58:43.710916 20946 solver.cpp:87] Iteration 1300, loss = 1.26956
+I1217 08:58:43.711760 20946 solver.cpp:106] Iteration 1300, Testing net
+I1217 08:58:59.215072 20946 solver.cpp:142] Test score #0: 0.4686
+I1217 08:58:59.216893 20946 solver.cpp:142] Test score #1: 1.45613
+I1217 08:58:59.220736 20946 solver.cpp:159] Snapshotting to fbeauty_iter_1300
+I1217 08:58:59.238261 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_1300.solverstate
+I1217 08:59:47.653771 20946 solver.cpp:237] Iteration 1400, lr = 0.000906403
+I1217 08:59:47.658651 20946 solver.cpp:87] Iteration 1400, loss = 1.21555
+I1217 08:59:47.660007 20946 solver.cpp:106] Iteration 1400, Testing net
+I1217 09:00:04.429365 20946 solver.cpp:142] Test score #0: 0.4384
+I1217 09:00:04.430593 20946 solver.cpp:142] Test score #1: 1.47125
+I1217 09:00:04.435721 20946 solver.cpp:159] Snapshotting to fbeauty_iter_1400
+I1217 09:00:04.449131 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_1400.solverstate
+I1217 09:00:04.463206 20946 solver.cpp:159] Snapshotting to fbeauty_iter_1400
+I1217 09:00:04.477911 20946 solver.cpp:166] Snapshotting solver state to fbeauty_iter_1400.solverstate
+I1217 09:00:04.489182 20946 solver.cpp:100] Optimization Done.
+I1217 09:00:04.491786 20946 train_net.cpp:34] Optimization Done.
+Done.
